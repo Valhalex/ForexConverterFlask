@@ -1,0 +1,30 @@
+{% extends "index.html" %}
+
+<!-- Give error message for invalid form, implement later for 
+specific case -->
+{% block invalidFrom %}
+{% if msg != ''%}<p>
+{% for myMsg in msg %}
+{{ myMsg }}
+{% endfor %}</p>
+{% endif%}
+{% set msg = ''%}
+
+{% endblock %}
+
+<!-- show converted currency -->
+{% block convertedCurrency %}
+
+
+    <p>
+    {% for dict_items in result %}
+    {% for key, value in dict_items.items() %}
+    {{key}}{{value}}
+    </p>
+
+{% endfor %}
+{% endfor %}
+
+
+
+{% endblock %}
